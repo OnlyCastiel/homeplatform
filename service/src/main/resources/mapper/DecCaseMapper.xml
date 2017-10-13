@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fdc.home.dec.service.inter.dao.generation.DecCaseMapper" >
+  <resultMap id="BaseResultMap" type="com.maofengqiang.domain.DecCase" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="case_name" property="caseName" jdbcType="VARCHAR" />
+    <result column="bid" property="bid" jdbcType="VARCHAR" />
+    <result column="blocation" property="blocation" jdbcType="VARCHAR" />
+    <result column="base_name" property="baseName" jdbcType="VARCHAR" />
+    <result column="building_id" property="buildingId" jdbcType="VARCHAR" />
+    <result column="building_name" property="buildingName" jdbcType="VARCHAR" />
+    <result column="house_layout_id" property="houseLayoutId" jdbcType="VARCHAR" />
+    <result column="house_layout_name" property="houseLayoutName" jdbcType="VARCHAR" />
+    <result column="house_type_id" property="houseTypeId" jdbcType="VARCHAR" />
+    <result column="house_type_name" property="houseTypeName" jdbcType="VARCHAR" />
+    <result column="house_type_detail_id" property="houseTypeDetailId" jdbcType="VARCHAR" />
+    <result column="house_type_detail_name" property="houseTypeDetailName" jdbcType="VARCHAR" />
+    <result column="dec_area" property="decArea" jdbcType="INTEGER" />
+    <result column="design_style" property="designStyle" jdbcType="VARCHAR" />
+    <result column="dec_mode" property="decMode" jdbcType="VARCHAR" />
+    <result column="case_dec_status" property="caseDecStatus" jdbcType="VARCHAR" />
+    <result column="tag_list" property="tagList" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="cover_img_origin" property="coverImgOrigin" jdbcType="VARCHAR" />
+    <result column="cover_img_dispose_four_three" property="coverImgDisposeFourThree" jdbcType="VARCHAR" />
+    <result column="authorid" property="authorid" jdbcType="VARCHAR" />
+    <result column="browse_num" property="browseNum" jdbcType="INTEGER" />
+    <result column="collect_num" property="collectNum" jdbcType="INTEGER" />
+    <result column="score" property="score" jdbcType="DECIMAL" />
+    <result column="case_status" property="caseStatus" jdbcType="INTEGER" />
+    <result column="dec_link" property="decLink" jdbcType="VARCHAR" />
+    <result column="dec_space" property="decSpace" jdbcType="VARCHAR" />
+    <result column="dec_service_provider" property="decServiceProvider" jdbcType="VARCHAR" />
+    <result column="supervisor_comment" property="supervisorComment" jdbcType="INTEGER" />
+    <result column="owner_upload" property="ownerUpload" jdbcType="INTEGER" />
+    <result column="gmt_created" property="gmtCreated" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
+    <result column="modified_by" property="modifiedBy" jdbcType="VARCHAR" />
+    <result column="hot_num" property="hotNum" jdbcType="INTEGER" />
+    <result column="comment_num" property="commentNum" jdbcType="INTEGER" />
+    <result column="case_introduction" property="caseIntroduction" jdbcType="VARCHAR" />
+    <result column="association_service_provider_id" property="associationServiceProviderId" jdbcType="VARCHAR" />
+    <result column="service_provider_phone_num" property="serviceProviderPhoneNum" jdbcType="VARCHAR" />
+    <result column="fail_reason" property="failReason" jdbcType="VARCHAR" />
+    <result column="dec_require" property="decRequire" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="finish_time" property="finishTime" jdbcType="TIMESTAMP" />
+    <result column="case_designer" property="caseDesigner" jdbcType="VARCHAR" />
+    <result column="foreman" property="foreman" jdbcType="VARCHAR" />
+    <result column="supervisor" property="supervisor" jdbcType="VARCHAR" />
+    <result column="charge_list" property="chargeList" jdbcType="VARCHAR" />
+    <result column="square_price" property="squarePrice" jdbcType="DECIMAL" />
+    <result column="case_designer_id" property="caseDesignerId" jdbcType="VARCHAR" />
+    <result column="foreman_id" property="foremanId" jdbcType="VARCHAR" />
+    <result column="supervisor_id" property="supervisorId" jdbcType="VARCHAR" />
+    <result column="service_provider_name" property="serviceProviderName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <trim prefix="(" suffix=")" prefixOverrides="and" >
+        
+        <foreach collection="oredCriteria" item="criteria" separator="or" >
+          <if test="criteria.valid" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </if>
+        </foreach>
+      </trim>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <trim prefix="(" suffix=")" prefixOverrides="and" >
+        
+        <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+          <if test="criteria.valid" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </if>
+        </foreach>
+      </trim>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, case_name, bid, blocation, base_name, building_id, building_name, house_layout_id, 
+    house_layout_name, house_type_id, house_type_name, house_type_detail_id, house_type_detail_name, 
+    dec_area, design_style, dec_mode, case_dec_status, tag_list, price, cover_img_origin, 
+    cover_img_dispose_four_three, authorid, browse_num, collect_num, score, case_status, 
+    dec_link, dec_space, dec_service_provider, supervisor_comment, owner_upload, gmt_created, 
+    gmt_modified, created_by, modified_by, hot_num, comment_num, case_introduction, association_service_provider_id, 
+    service_provider_phone_num, fail_reason, dec_require, start_time, finish_time, case_designer, 
+    foreman, supervisor, charge_list, square_price, case_designer_id, foreman_id, supervisor_id, 
+    service_provider_name
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from dec_case
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from dec_case
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.maofengqiang.domain.DecCase" useGeneratedKeys="true" keyProperty="id" >
+    insert into dec_case (id, case_name, bid, 
+      blocation, base_name, building_id, 
+      building_name, house_layout_id, house_layout_name, 
+      house_type_id, house_type_name, house_type_detail_id, 
+      house_type_detail_name, dec_area, design_style, 
+      dec_mode, case_dec_status, tag_list, 
+      price, cover_img_origin, cover_img_dispose_four_three, 
+      authorid, browse_num, collect_num, 
+      score, case_status, dec_link, 
+      dec_space, dec_service_provider, supervisor_comment, 
+      owner_upload, gmt_created, gmt_modified, 
+      created_by, modified_by, hot_num, 
+      comment_num, case_introduction, association_service_provider_id, 
+      service_provider_phone_num, fail_reason, dec_require, 
+      start_time, finish_time, case_designer, 
+      foreman, supervisor, charge_list, 
+      square_price, case_designer_id, foreman_id, 
+      supervisor_id, service_provider_name)
+    values (#{id,jdbcType=VARCHAR}, #{caseName,jdbcType=VARCHAR}, #{bid,jdbcType=VARCHAR}, 
+      #{blocation,jdbcType=VARCHAR}, #{baseName,jdbcType=VARCHAR}, #{buildingId,jdbcType=VARCHAR}, 
+      #{buildingName,jdbcType=VARCHAR}, #{houseLayoutId,jdbcType=VARCHAR}, #{houseLayoutName,jdbcType=VARCHAR}, 
+      #{houseTypeId,jdbcType=VARCHAR}, #{houseTypeName,jdbcType=VARCHAR}, #{houseTypeDetailId,jdbcType=VARCHAR}, 
+      #{houseTypeDetailName,jdbcType=VARCHAR}, #{decArea,jdbcType=INTEGER}, #{designStyle,jdbcType=VARCHAR}, 
+      #{decMode,jdbcType=VARCHAR}, #{caseDecStatus,jdbcType=VARCHAR}, #{tagList,jdbcType=VARCHAR}, 
+      #{price,jdbcType=DECIMAL}, #{coverImgOrigin,jdbcType=VARCHAR}, #{coverImgDisposeFourThree,jdbcType=VARCHAR}, 
+      #{authorid,jdbcType=VARCHAR}, #{browseNum,jdbcType=INTEGER}, #{collectNum,jdbcType=INTEGER}, 
+      #{score,jdbcType=DECIMAL}, #{caseStatus,jdbcType=INTEGER}, #{decLink,jdbcType=VARCHAR}, 
+      #{decSpace,jdbcType=VARCHAR}, #{decServiceProvider,jdbcType=VARCHAR}, #{supervisorComment,jdbcType=INTEGER}, 
+      #{ownerUpload,jdbcType=INTEGER}, #{gmtCreated,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+      #{createdBy,jdbcType=VARCHAR}, #{modifiedBy,jdbcType=VARCHAR}, #{hotNum,jdbcType=INTEGER}, 
+      #{commentNum,jdbcType=INTEGER}, #{caseIntroduction,jdbcType=VARCHAR}, #{associationServiceProviderId,jdbcType=VARCHAR}, 
+      #{serviceProviderPhoneNum,jdbcType=VARCHAR}, #{failReason,jdbcType=VARCHAR}, #{decRequire,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{finishTime,jdbcType=TIMESTAMP}, #{caseDesigner,jdbcType=VARCHAR}, 
+      #{foreman,jdbcType=VARCHAR}, #{supervisor,jdbcType=VARCHAR}, #{chargeList,jdbcType=VARCHAR}, 
+      #{squarePrice,jdbcType=DECIMAL}, #{caseDesignerId,jdbcType=VARCHAR}, #{foremanId,jdbcType=VARCHAR}, 
+      #{supervisorId,jdbcType=VARCHAR}, #{serviceProviderName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.maofengqiang.domain.DecCase" useGeneratedKeys="true" keyProperty="id" >
+    insert into dec_case
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="caseName != null" >
+        case_name,
+      </if>
+      <if test="bid != null" >
+        bid,
+      </if>
+      <if test="blocation != null" >
+        blocation,
+      </if>
+      <if test="baseName != null" >
+        base_name,
+      </if>
+      <if test="buildingId != null" >
+        building_id,
+      </if>
+      <if test="buildingName != null" >
+        building_name,
+      </if>
+      <if test="houseLayoutId != null" >
+        house_layout_id,
+      </if>
+      <if test="houseLayoutName != null" >
+        house_layout_name,
+      </if>
+      <if test="houseTypeId != null" >
+        house_type_id,
+      </if>
+      <if test="houseTypeName != null" >
+        house_type_name,
+      </if>
+      <if test="houseTypeDetailId != null" >
+        house_type_detail_id,
+      </if>
+      <if test="houseTypeDetailName != null" >
+        house_type_detail_name,
+      </if>
+      <if test="decArea != null" >
+        dec_area,
+      </if>
+      <if test="designStyle != null" >
+        design_style,
+      </if>
+      <if test="decMode != null" >
+        dec_mode,
+      </if>
+      <if test="caseDecStatus != null" >
+        case_dec_status,
+      </if>
+      <if test="tagList != null" >
+        tag_list,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="coverImgOrigin != null" >
+        cover_img_origin,
+      </if>
+      <if test="coverImgDisposeFourThree != null" >
+        cover_img_dispose_four_three,
+      </if>
+      <if test="authorid != null" >
+        authorid,
+      </if>
+      <if test="browseNum != null" >
+        browse_num,
+      </if>
+      <if test="collectNum != null" >
+        collect_num,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="caseStatus != null" >
+        case_status,
+      </if>
+      <if test="decLink != null" >
+        dec_link,
+      </if>
+      <if test="decSpace != null" >
+        dec_space,
+      </if>
+      <if test="decServiceProvider != null" >
+        dec_service_provider,
+      </if>
+      <if test="supervisorComment != null" >
+        supervisor_comment,
+      </if>
+      <if test="ownerUpload != null" >
+        owner_upload,
+      </if>
+      <if test="gmtCreated != null" >
+        gmt_created,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+      <if test="createdBy != null" >
+        created_by,
+      </if>
+      <if test="modifiedBy != null" >
+        modified_by,
+      </if>
+      <if test="hotNum != null" >
+        hot_num,
+      </if>
+      <if test="commentNum != null" >
+        comment_num,
+      </if>
+      <if test="caseIntroduction != null" >
+        case_introduction,
+      </if>
+      <if test="associationServiceProviderId != null" >
+        association_service_provider_id,
+      </if>
+      <if test="serviceProviderPhoneNum != null" >
+        service_provider_phone_num,
+      </if>
+      <if test="failReason != null" >
+        fail_reason,
+      </if>
+      <if test="decRequire != null" >
+        dec_require,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="finishTime != null" >
+        finish_time,
+      </if>
+      <if test="caseDesigner != null" >
+        case_designer,
+      </if>
+      <if test="foreman != null" >
+        foreman,
+      </if>
+      <if test="supervisor != null" >
+        supervisor,
+      </if>
+      <if test="chargeList != null" >
+        charge_list,
+      </if>
+      <if test="squarePrice != null" >
+        square_price,
+      </if>
+      <if test="caseDesignerId != null" >
+        case_designer_id,
+      </if>
+      <if test="foremanId != null" >
+        foreman_id,
+      </if>
+      <if test="supervisorId != null" >
+        supervisor_id,
+      </if>
+      <if test="serviceProviderName != null" >
+        service_provider_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="caseName != null" >
+        #{caseName,jdbcType=VARCHAR},
+      </if>
+      <if test="bid != null" >
+        #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="blocation != null" >
+        #{blocation,jdbcType=VARCHAR},
+      </if>
+      <if test="baseName != null" >
+        #{baseName,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingId != null" >
+        #{buildingId,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingName != null" >
+        #{buildingName,jdbcType=VARCHAR},
+      </if>
+      <if test="houseLayoutId != null" >
+        #{houseLayoutId,jdbcType=VARCHAR},
+      </if>
+      <if test="houseLayoutName != null" >
+        #{houseLayoutName,jdbcType=VARCHAR},
+      </if>
+      <if test="houseTypeId != null" >
+        #{houseTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="houseTypeName != null" >
+        #{houseTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="houseTypeDetailId != null" >
+        #{houseTypeDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="houseTypeDetailName != null" >
+        #{houseTypeDetailName,jdbcType=VARCHAR},
+      </if>
+      <if test="decArea != null" >
+        #{decArea,jdbcType=INTEGER},
+      </if>
+      <if test="designStyle != null" >
+        #{designStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="decMode != null" >
+        #{decMode,jdbcType=VARCHAR},
+      </if>
+      <if test="caseDecStatus != null" >
+        #{caseDecStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="tagList != null" >
+        #{tagList,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="coverImgOrigin != null" >
+        #{coverImgOrigin,jdbcType=VARCHAR},
+      </if>
+      <if test="coverImgDisposeFourThree != null" >
+        #{coverImgDisposeFourThree,jdbcType=VARCHAR},
+      </if>
+      <if test="authorid != null" >
+        #{authorid,jdbcType=VARCHAR},
+      </if>
+      <if test="browseNum != null" >
+        #{browseNum,jdbcType=INTEGER},
+      </if>
+      <if test="collectNum != null" >
+        #{collectNum,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=DECIMAL},
+      </if>
+      <if test="caseStatus != null" >
+        #{caseStatus,jdbcType=INTEGER},
+      </if>
+      <if test="decLink != null" >
+        #{decLink,jdbcType=VARCHAR},
+      </if>
+      <if test="decSpace != null" >
+        #{decSpace,jdbcType=VARCHAR},
+      </if>
+      <if test="decServiceProvider != null" >
+        #{decServiceProvider,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisorComment != null" >
+        #{supervisorComment,jdbcType=INTEGER},
+      </if>
+      <if test="ownerUpload != null" >
+        #{ownerUpload,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreated != null" >
+        #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifiedBy != null" >
+        #{modifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="hotNum != null" >
+        #{hotNum,jdbcType=INTEGER},
+      </if>
+      <if test="commentNum != null" >
+        #{commentNum,jdbcType=INTEGER},
+      </if>
+      <if test="caseIntroduction != null" >
+        #{caseIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="associationServiceProviderId != null" >
+        #{associationServiceProviderId,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceProviderPhoneNum != null" >
+        #{serviceProviderPhoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="failReason != null" >
+        #{failReason,jdbcType=VARCHAR},
+      </if>
+      <if test="decRequire != null" >
+        #{decRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishTime != null" >
+        #{finishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="caseDesigner != null" >
+        #{caseDesigner,jdbcType=VARCHAR},
+      </if>
+      <if test="foreman != null" >
+        #{foreman,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisor != null" >
+        #{supervisor,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeList != null" >
+        #{chargeList,jdbcType=VARCHAR},
+      </if>
+      <if test="squarePrice != null" >
+        #{squarePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="caseDesignerId != null" >
+        #{caseDesignerId,jdbcType=VARCHAR},
+      </if>
+      <if test="foremanId != null" >
+        #{foremanId,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisorId != null" >
+        #{supervisorId,jdbcType=VARCHAR},
+      </if>
+      <if test="serviceProviderName != null" >
+        #{serviceProviderName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="com.maofengqiang.domain.DecCase" >
+    update dec_case
+    set case_name = #{caseName,jdbcType=VARCHAR},
+      bid = #{bid,jdbcType=VARCHAR},
+      blocation = #{blocation,jdbcType=VARCHAR},
+      base_name = #{baseName,jdbcType=VARCHAR},
+      building_id = #{buildingId,jdbcType=VARCHAR},
+      building_name = #{buildingName,jdbcType=VARCHAR},
+      house_layout_id = #{houseLayoutId,jdbcType=VARCHAR},
+      house_layout_name = #{houseLayoutName,jdbcType=VARCHAR},
+      house_type_id = #{houseTypeId,jdbcType=VARCHAR},
+      house_type_name = #{houseTypeName,jdbcType=VARCHAR},
+      house_type_detail_id = #{houseTypeDetailId,jdbcType=VARCHAR},
+      house_type_detail_name = #{houseTypeDetailName,jdbcType=VARCHAR},
+      dec_area = #{decArea,jdbcType=INTEGER},
+      design_style = #{designStyle,jdbcType=VARCHAR},
+      dec_mode = #{decMode,jdbcType=VARCHAR},
+      case_dec_status = #{caseDecStatus,jdbcType=VARCHAR},
+      tag_list = #{tagList,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      cover_img_origin = #{coverImgOrigin,jdbcType=VARCHAR},
+      cover_img_dispose_four_three = #{coverImgDisposeFourThree,jdbcType=VARCHAR},
+      authorid = #{authorid,jdbcType=VARCHAR},
+      browse_num = #{browseNum,jdbcType=INTEGER},
+      collect_num = #{collectNum,jdbcType=INTEGER},
+      score = #{score,jdbcType=DECIMAL},
+      case_status = #{caseStatus,jdbcType=INTEGER},
+      dec_link = #{decLink,jdbcType=VARCHAR},
+      dec_space = #{decSpace,jdbcType=VARCHAR},
+      dec_service_provider = #{decServiceProvider,jdbcType=VARCHAR},
+      supervisor_comment = #{supervisorComment,jdbcType=INTEGER},
+      owner_upload = #{ownerUpload,jdbcType=INTEGER},
+      gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      created_by = #{createdBy,jdbcType=VARCHAR},
+      modified_by = #{modifiedBy,jdbcType=VARCHAR},
+      hot_num = #{hotNum,jdbcType=INTEGER},
+      comment_num = #{commentNum,jdbcType=INTEGER},
+      case_introduction = #{caseIntroduction,jdbcType=VARCHAR},
+      association_service_provider_id = #{associationServiceProviderId,jdbcType=VARCHAR},
+      service_provider_phone_num = #{serviceProviderPhoneNum,jdbcType=VARCHAR},
+      fail_reason = #{failReason,jdbcType=VARCHAR},
+      dec_require = #{decRequire,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      finish_time = #{finishTime,jdbcType=TIMESTAMP},
+      case_designer = #{caseDesigner,jdbcType=VARCHAR},
+      foreman = #{foreman,jdbcType=VARCHAR},
+      supervisor = #{supervisor,jdbcType=VARCHAR},
+      charge_list = #{chargeList,jdbcType=VARCHAR},
+      square_price = #{squarePrice,jdbcType=DECIMAL},
+      case_designer_id = #{caseDesignerId,jdbcType=VARCHAR},
+      foreman_id = #{foremanId,jdbcType=VARCHAR},
+      supervisor_id = #{supervisorId,jdbcType=VARCHAR},
+      service_provider_name = #{serviceProviderName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

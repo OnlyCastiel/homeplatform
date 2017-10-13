@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="homeplatform_web_consumer"/>
+
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:consumer check="false"/>
+    <!--<dubbo:registry address="10.25.8.39:2183,10.25.8.43:2181,10.47.69.89:2181" protocol="zookeeper" file ="/root/dubbocache/dec/dubbo-registery-web.cache"/>-->
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
+<!--    <dubbo:reference interface="com.maofengqiang.dubboApi.UserService"
+                     id="userService"  version="0.0.1"/>-->
+    <dubbo:reference interface="com.maofengqiang.dubboApi.UserService"
+                     id="userService"/>
+</beans>
